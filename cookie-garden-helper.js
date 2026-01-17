@@ -683,6 +683,7 @@ class Main {
       delete changedConfigs[key];
       configs[key].value = defaultConfigs[key].value;
     } else {
+      if (!changedConfigs[key]) changedConfigs[key] = {};
       changedConfigs[key].value = value;
     }
     Game.WriteSave();
